@@ -12,6 +12,12 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@theme {
+  --color-christmas-green: #0f9d58;
+  --color-christmas-red: #db4437;
+  --color-christmas-gold: #f4c430;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
