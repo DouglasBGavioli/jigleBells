@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { TbChristmasBall } from "react-icons/tb";
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -12,11 +13,11 @@ export default function Header() {
                     {/* Logo */}
                     <div className="flex-shrink-0">
                         <a
-                            href="#"
-                            className="text-3xl font-extrabold text-christmas-green flex items-center space-x-2 hover:scale-105 transition-transform"
+                            href=""
+                            className="text-3xl font-extrabold text-christmas-green flex items-center space-x-2"
                         >
-                            <i className="fas fa-holly-berry text-christmas-red drop-shadow-md" />
-                            <span className="drop-shadow">Meu Natal Listas</span>
+                            <TbChristmasBall size={32} className="text-christmas-red" />
+                            <span className="drop-shadow">HoHoList</span>
                         </a>
                     </div>
 

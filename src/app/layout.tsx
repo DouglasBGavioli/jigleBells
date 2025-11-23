@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { GiftListProvider } from "@/contexts/giftList";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,9 +22,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <head>
@@ -32,11 +33,18 @@ export default function RootLayout({
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+
+      {/* LAYOUT CORRIGIDO */}
+      <body className="flex flex-col min-h-screen bg-background text-foreground">
+
         <Header />
-        <GiftListProvider>{children}</GiftListProvider>
+
+        {/* ESSE MAIN AQUI É A PARTE QUE RESOLVE TUDO */}
+        <main className="flex-grow">
+          <GiftListProvider>{children}</GiftListProvider>
+        </main>
+
+        <Footer />
       </body>
     </html>
   );
